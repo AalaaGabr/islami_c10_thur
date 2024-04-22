@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_two/hadeth/hadeth_details_screen.dart';
 import 'package:islami_two/home_screen.dart';
 import 'package:islami_two/screen/sura_details_screen.dart';
 import 'package:islami_two/splash_screen.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         cardColor: Colors.white,
       ),
       routes: {
+        HadethDetailsScreen.routName: (context) => HadethDetailsScreen(),
         SuraDetailsScreen.routeNAme: (context) => SuraDetailsScreen(),
         HomeScreen.routeName: (context) => HomeScreen(),
         SplashScreen.routName: (context) => SplashScreen(),
