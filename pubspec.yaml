@@ -63,6 +63,7 @@ flutter:
     - asseta/images/
     - asseta/files/
     - asseta/light mode/
+    - asseta/dark mode/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

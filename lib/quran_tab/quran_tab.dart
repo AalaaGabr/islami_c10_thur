@@ -133,7 +133,7 @@ class QuranTab extends StatelessWidget {
                 margin: EdgeInsets.symmetric(horizontal: 40),
                 width: double.infinity,
                 height: 2,
-                color: Color(0XFFB7935F),
+                color: Theme.of(context).dividerColor,
               ),
               itemBuilder: (context, index) => SuraName(
                 suraName: suranames[index],

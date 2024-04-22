@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_two/quran_tab/sura_name.dart';
 import 'package:islami_two/screen/quran_details.dart';
+import 'package:islami_two/styls/my_theme_data.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   static const String routeNAme = " Sura_Details";
@@ -20,8 +21,10 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-        image: AssetImage(
-          "asseta/images/default_bg.png",
+            image: AssetImage(
+          MyThemeData.isDarkSelected
+              ? 'asseta/images/dark_bg.png'
+              : "asseta/images/default_bg.png",
         ),
         fit: BoxFit.fill,
       )),
@@ -38,7 +41,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
               margin: EdgeInsets.symmetric(horizontal: 32),
               width: double.infinity,
               height: 2,
-              color: Color(0XFFB7935F),
+              // color: Color(0XFFB7935F),
             ),
             itemBuilder: (context, index) =>
                 QuranDetails(quranText: verses[index]),
