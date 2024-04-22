@@ -3,6 +3,8 @@ import 'package:islami_two/hadeth/hadeth_tab.dart';
 import 'package:islami_two/quran_tab/quran_tab.dart';
 import 'package:islami_two/radio/radio_tab.dart';
 import 'package:islami_two/sebha/sebha_tab.dart';
+import 'package:islami_two/settings_tab/settings_tab.dart';
+import 'package:islami_two/styls/my_theme_data.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'Home_Screen';
@@ -16,18 +18,20 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Widget> tabs = [
     QuranTab(),
-    SebhaTab(),
     HadethTab(),
+    SebhaTab(),
     RadioTab(),
+    SettingsTab(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
+        backgroundColor: Colors.transparent,
         appBar: AppBar(
           title: Text('islami'),
-          backgroundColor: Colors.transparent,
+          // backgroundColor: Colors.transparent,
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: selectsdindextab,
@@ -37,21 +41,27 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           items: [
             BottomNavigationBarItem(
-                backgroundColor: Color(0XFFB7935F),
-                icon: ImageIcon(AssetImage('asseta/images/icon_quran.png')),
+                backgroundColor: Theme.of(context).primaryColor,
+                icon: ImageIcon(AssetImage(MyThemeData.isDarkSelected
+                    ? 'asseta/images/dark_bg.png'
+                    : 'asseta/images/icon_quran.png')),
                 label: "Quran"),
             BottomNavigationBarItem(
-                backgroundColor: Color(0XFFB7935F),
+                backgroundColor: Theme.of(context).primaryColor,
                 icon: ImageIcon(AssetImage('asseta/images/icon_hadeth.png')),
                 label: "Hadeth"),
             BottomNavigationBarItem(
-                backgroundColor: Color(0XFFB7935F),
+                backgroundColor: Theme.of(context).primaryColor,
                 icon: ImageIcon(AssetImage('asseta/images/icon_sebha.png')),
                 label: "Sebha"),
             BottomNavigationBarItem(
-                backgroundColor: Color(0XFFB7935F),
+                backgroundColor: Theme.of(context).primaryColor,
                 icon: ImageIcon(AssetImage('asseta/images/icon_radio.png')),
-                label: "Radio")
+                label: "Radio"),
+            BottomNavigationBarItem(
+                backgroundColor: Theme.of(context).primaryColor,
+                icon: Icon(Icons.settings),
+                label: "settings")
           ],
         ),
         body: tabs[selectsdindextab],
