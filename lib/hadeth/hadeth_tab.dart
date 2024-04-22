@@ -49,7 +49,7 @@ class _HadethTabState extends State<HadethTab> {
                           ),
                       separatorBuilder: (context, index) => Container(
                             margin: EdgeInsets.symmetric(horizontal: 35),
-                            color: Color(0XFFB7935F),
+                            color: Theme.of(context).dividerColor,
                             width: double.infinity,
                             height: 2,
                           ),
